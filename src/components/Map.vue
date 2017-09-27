@@ -1,7 +1,7 @@
 <template>
   <div id="Map">
     <gmap-map
-        :center= "{lat: 40, lng: -1.3}"
+        :center= "{lat: 40, lng: 13.3}"
         :zoom="3"
         :options="options"
         :scaleControl="false"

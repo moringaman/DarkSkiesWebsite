@@ -1,22 +1,27 @@
 <template>
   <div id="title">
     <img id="banner-image" src="../assets/logoTransWhite.png"/>
+    <span  id="downicon" class="icon o">
+    <i class="fa fa-3x fa-chevron-down"></i>
+   </span>
      <div id="overlay">
-       <content>
-       <h2 id="tagline">Enviromental activism just evolved.</h2>
-        <h4 id="title2">Coming early 2018, Sign Up to Be Part Of the Beta</h4>
+       <content id="banner-text">
+       <h2 id="tagline">Take part in the evolution of environmental activism.. </h2>
 
+
+       <h3 id="appdesc">The Darkskies App turns your Mobile device into a chemtrail tracker. Help a <span style="font-weight: bold">global community of activists</span>, gather the data and expose the deception.</h3>
+       <h4 id="title2">Coming early 2018, Sign Up to Be Part Of the Beta</h4>
      </content>
      </div>
-    <div class="box"  id="email" style="width: 700px;">
+    <div class="box"  id="email" style="width: 600px;">
 
         <div class="field has-addons">
           <p class="control">
-            <input class="input" style="width: 550px;" type="text" placeholder="Your email">
+            <input class="input" style="width: 480px;" type="text" placeholder="Your email">
           </p>
           <p class="control">
             <a class="button is-success">
-              Sign Me Up
+              Subscribe
             </a>
           </p>
 
@@ -95,7 +100,7 @@ export default {
   })
 }
 </script>
-<style lang="css">
+<style lang="css" scoped>
 
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
@@ -115,8 +120,9 @@ export default {
 }
 
 #email {
-  top: 500px;
-  width: 650px;
+  top: 520px;
+  width: 200px;
+  padding: 10px;
 }
 
 #tagline {
@@ -128,28 +134,49 @@ export default {
   top: 700px;
   width: 800px;
   line-height: 55px;
-  color: #444;
+  color: #555;
 /*  text-shadow: 4px 4px 10px rgba(0, 0, 0, .4); */
 }
 
 #banner-image {
   position: absolute;
   left: 44%;
-  top: 270px;
-  width: 400px;
+  top: 265px;
+  width: 450px;
+  z-index: 10;
+}
+
+#banner-text {
   z-index: 1000;
 }
 
 #title2 {
   position: absolute;
   left: 45%;
-  top: 460px;
+  top: 485px;
   width: 800px;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 21px;
 }
 
+#downicon {
+  position: absolute;
+  left: 58%;
+  top: 850px;
+  color: #ccc;
+  z-index:1000;
+}
+
+#appdesc {
+  position: absolute;
+  left: 45%;
+  top: 370px;
+  width: 600px;
+  font-size: 21px;
+  line-height: 30px;
+  opacity: 0.9;
+}
 
 #app-screen {
   background-color: #ffffff;
@@ -166,7 +193,7 @@ export default {
   text-align: left;
   position: absolute;
   top: 0px;
-  height:620px;
+  height:632px;
   width: 100vw;
   color: #fff;
   opacity: 0.8;
@@ -185,10 +212,12 @@ export default {
 }
 
 .box {
-  width: 600px;
+  width: 400px;
   position: absolute;
   left: 45%;
   top: 300px;
+  padding: opx;
+
  /* transform: translateX(-250px); */
 }
 </style>
