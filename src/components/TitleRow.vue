@@ -9,7 +9,7 @@
        <h2 id="tagline">Take part in the evolution of environmental activism.. </h2>
 
 
-       <h3 id="appdesc">The Darkskies App turns your Mobile device into a chemtrail tracker. Help a <span style="font-weight: bold">global community of activists</span>, gather the data and expose the deception.</h3>
+       <h3 id="appdesc">The Darkskies App turns your Mobile device into a chemtrail tracker. Help a <span style="font-weight: bold">global community of activists</span>, gather the data we need to expose the deception.</h3>
        <h4 id="title2">Coming early 2018, Sign Up to Be Part Of the Beta</h4>
      </content>
      </div>
