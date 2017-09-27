@@ -120,7 +120,7 @@ export default {
 }
 
 #email {
-  top: 520px;
+  top: 530px;
   width: 200px;
   padding: 10px;
 }
