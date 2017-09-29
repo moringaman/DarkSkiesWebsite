@@ -13,20 +13,24 @@
        <h4 id="title2">Coming early 2018, Sign Up to Be Part Of the Beta</h4>
      </content>
      </div>
-    <div class="box"  id="email" style="width: 600px;">
+    <div v-if="!signUpStatus" class="box"  id="email" style="width: 600px;">
 
         <div class="field has-addons">
           <p class="control">
-            <input class="input" style="width: 480px;" type="text" placeholder="Your email">
+            <input class="input" style="width: 480px;" type="text" placeholder="Your email" v-model="emailAddress">
           </p>
           <p class="control">
-            <a class="button is-success">
+            <a class="button is-success" @click="subscribe">
               Subscribe
             </a>
           </p>
-
       </div>
+
   </div>
+  <div v-if="signUpStatus" class="box"  id="email" style="width: 600px;">
+  <p v-if="signUpStatus"> Thanks for signing up, We will email you once the app is ready.</p>    
+</div>
+
 
 <!-- Opt in form card sextion
 
@@ -84,20 +88,36 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
 
 <!-- Mobile phone App display Card section -->
 <div class="card" id="app-screen" >
-
   <figure class="image">
         <img id="phone" src="../assets/iphone6screenshot.png" alt="Placeholder image">
       </figure>
-
 </div>
+<div class="card" id="app-screen2" >
+<figure class="image">
+      <img id="sml-phone" src="../assets/SignUpScreen.png" alt="Placeholder image">
+    </figure>
+</div>
+
   </div>
 </template>
 <script>
 export default {
   name: 'title',
-  data: () => ({
-
-  })
+  data () {
+    return {
+      emailAddress: ''
+    }
+  },
+  computed: {
+    signUpStatus () {
+      return this.$store.getters.signUpStatus
+    }
+  },
+  methods: {
+    subscribe () {
+      this.$store.dispatch('PostSignUpData', this.emailAddress)
+    }
+  }
 }
 </script>
 <style lang="css" scoped>
@@ -107,6 +127,37 @@ export default {
 #phone {
   width: 370px;
   border-radius: 10px;
+  z-index: 10;
+}
+
+#sml-phone {
+  width: 300px;
+  border-radius: 10px;
+  zindex: 9;
+}
+
+#app-screen {
+  background-color: #ffffff;
+  width: 370px;
+  position: absolute;
+  left: 20%;
+  /* transform: translateX(-400px); */
+  top: 250px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
+  border-radius: 10px;
+  z-index: 10;
+}
+
+#app-screen2 {
+  background-color: #ffffff;
+  width: 300px;
+  position: absolute;
+  left:12%;
+  /* transform: translateX(-400px); */
+  top: 330px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
+  border-radius: 10px;
+  z-index: 9;
 }
 
 #opt-in {
@@ -178,22 +229,14 @@ export default {
   opacity: 0.9;
 }
 
-#app-screen {
-  background-color: #ffffff;
-  width: 370px;
-  position: absolute;
-  left: 20%;
-  /* transform: translateX(-400px); */
-  top: 250px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
-  border-radius: 10px;
-}
+
 
 #overlay {
   text-align: left;
   position: absolute;
   top: 0px;
-  height:632px;
+  /* height:632px; */
+  height: 65vh;
   width: 100vw;
   color: #fff;
   opacity: 0.8;

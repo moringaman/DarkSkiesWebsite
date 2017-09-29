@@ -51,7 +51,4 @@ export default {
 </script>
 <style lang="css" scoped>
 
-#Map {
-  height: 300px;
-}
 </style>
