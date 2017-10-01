@@ -17,10 +17,14 @@
 
         <div class="field has-addons">
           <p class="control">
-            <input class="input" style="width: 480px;" type="text" placeholder="Your email" v-model="emailAddress">
+            <input v-if="!duplicateAddress" class="input" style="width: 480px;" type="text" placeholder="Your email" v-model="emailAddress">
+            <a v-if="duplicateAddress" @click="reset()" class="button is-danger">Ooops! We already have that email, click here to try another one</a>
           </p>
           <p class="control">
-            <a class="button is-success" @click="subscribe">
+            <a v-if="emailAddress === '' || isValid" class="button is-success" @click="subscribe">
+              Subscribe
+            </a>
+            <a v-if="!isValid && emailAddress !== ''" class="button is-success" @click="subscribe" disabled>
               Subscribe
             </a>
           </p>
@@ -28,7 +32,7 @@
 
   </div>
   <div v-if="signUpStatus" class="box"  id="email" style="width: 600px;">
-  <p v-if="signUpStatus"> Thanks for signing up, We will email you once the app is ready.</p>    
+  <p v-if="signUpStatus"> Thanks for signing up, We will email you once the app is ready.</p>
 </div>
 
 
@@ -87,20 +91,28 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
 </div> -->
 
 <!-- Mobile phone App display Card section -->
-<div class="card" id="app-screen" >
-  <figure class="image">
-        <img id="phone" src="../assets/iphone6screenshot.png" alt="Placeholder image">
-      </figure>
-</div>
-<div class="card" id="app-screen2" >
-<figure class="image">
-      <img id="sml-phone" src="../assets/SignUpScreen.png" alt="Placeholder image">
-    </figure>
-</div>
 
+<div class="columns">
+  <div class="column" id="left">
+    <div class="card" id="app-screen" >
+      <figure class="image">
+            <img id="phone" src="../assets/iphone6screenshot.png" alt="Placeholder image">
+          </figure>
+    </div>
+    <div class="card" id="app-screen2" >
+    <figure class="image">
+          <img id="sml-phone" src="../assets/SignUpScreen.png" alt="Placeholder image">
+        </figure>
+    </div>
+  </div>
+  <div class="column is-two-thirds" id="right">
+  </div>
+</div>
   </div>
 </template>
 <script>
+var emailRE = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
 export default {
   name: 'title',
   data () {
@@ -111,18 +123,50 @@ export default {
   computed: {
     signUpStatus () {
       return this.$store.getters.signUpStatus
+    },
+    duplicateAddress () {
+      return this.$store.getters.duplicateAddress
+    },
+    validation: function () {
+      return {
+        email: emailRE.test(this.emailAddress)
+      }
+    },
+    isValid: function () {
+      var validation = this.validation
+      return Object.keys(validation).every(function (key) {
+        return validation[key]
+      })
     }
   },
   methods: {
     subscribe () {
       this.$store.dispatch('PostSignUpData', this.emailAddress)
+      this.emailAddress = ' '
+    },
+    reset () {
+      this.emailAddress = ' '
+      this.$store.commit('setDuplicateAddress', false)
     }
+  },
+  created () {
+    console.log('duplicate ? ' + this.duplicateAddress)
   }
 }
+
 </script>
 <style lang="css" scoped>
 
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+#left {
+background-color:#ccc;
+min-width: 800px;
+}
+
+#right {
+background-color: #gray;
+}
 
 #phone {
   width: 370px;
