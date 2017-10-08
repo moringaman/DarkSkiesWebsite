@@ -171,6 +171,7 @@ export default {
 .flex-content {
   position:relative;
   display: flex;
+  display: -webkit-flex;
   top: -425px;
 }
 
@@ -327,6 +328,7 @@ color: #fff;
 @media screen and (min-width: 500px) {
   .flex-content {
     flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
   }
 }
 
