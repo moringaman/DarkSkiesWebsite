@@ -324,13 +324,13 @@ color: #fff;
 }
 
 
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
   .flex-content {
     flex-wrap: wrap;
   }
 }
 
-@media (min-width: 1156px) {
+@media screen and (min-width: 1156px) {
   .fixed-box {
     float: right;
   }
@@ -338,7 +338,7 @@ color: #fff;
 
 }
 
-@media (max-width: 1150px) {
+@media screen and (max-width: 1150px) {
   .fixed-box {
     margin-left: 50%;
     margin-right: 50%;
@@ -382,7 +382,7 @@ color: #fff;
 
 }
 
-@media (max-width: 534px) {
+@media screen and (max-width: 534px) {
 
     .fixed-box {
       width: 100vw;
