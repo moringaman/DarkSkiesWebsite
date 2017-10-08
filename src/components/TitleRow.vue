@@ -424,7 +424,10 @@ color: #fff;
     .flex-content {
       position:relative;
       display: flex;
+      display: -webkit-flex;
       flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+
       top: -200px;
     }
 
