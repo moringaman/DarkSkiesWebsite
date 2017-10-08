@@ -17,9 +17,9 @@ export const store = new Vuex.Store({
     },
     setDuplicateAddress (state, payload) {
       state.duplicateAddress = payload
-      setTimeout(() => {
-        state.duplicateAddress = false
-      }, 3000)
+      // setTimeout(() => {
+      //   state.duplicateAddress = false
+      // }, 3000)
     }
   },
   actions: {
@@ -31,13 +31,14 @@ export const store = new Vuex.Store({
         const userData = snapshot.val()
         if (userData) {
           commit('setDuplicateAddress', true)
-          return
+          return false
         } else {
           firebase.database()
             .ref('subscribers/').push({
               emailAddress: payload
             })
           commit('setSignUpStatus', true)
+          return true
         }
       })
       .catch((err) => {

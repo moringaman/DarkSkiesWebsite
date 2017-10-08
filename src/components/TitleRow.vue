@@ -1,39 +1,11 @@
 <template>
   <div id="title">
-    <img id="banner-image" src="../assets/logoTransWhite.png"/>
-    <span  id="downicon" class="icon o">
-    <i class="fa fa-3x fa-chevron-down"></i>
-   </span>
+<!--<div class="headline">
+It's time to Put Chemtrails on the Map
+</div> -->
      <div id="overlay">
-       <content id="banner-text">
-       <h2 id="tagline">Take part in the evolution of environmental activism.. </h2>
 
-
-       <h3 id="appdesc">The Darkskies App turns your Mobile device into a chemtrail tracker. Help a <span style="font-weight: bold">global community of activists</span>, gather the data we need to expose this deception.</h3>
-       <h4 id="title2">Coming early 2018, Sign Up to Be Part Of the Beta</h4>
-     </content>
      </div>
-    <div v-if="!signUpStatus" class="box"  id="email" style="width: 600px;">
-
-        <div class="field has-addons">
-          <p class="control">
-            <input v-if="!duplicateAddress" class="input" style="width: 480px;" type="text" placeholder="Your email" v-model="emailAddress">
-            <a v-if="duplicateAddress" @click="reset()" class="button is-danger">Ooops! We already have that email, click here to try another one</a>
-          </p>
-          <p class="control">
-            <a v-if="emailAddress === '' || isValid" class="button is-success" @click="subscribe">
-              Subscribe
-            </a>
-            <a v-if="!isValid && emailAddress !== ''" class="button is-success" @click="subscribe" disabled>
-              Subscribe
-            </a>
-          </p>
-      </div>
-
-  </div>
-  <div v-if="signUpStatus" class="box"  id="email" style="width: 600px;">
-  <p v-if="signUpStatus"> Thanks for signing up, We will email you once the app is ready.</p>
-</div>
 
 
 <!-- Opt in form card sextion
@@ -92,22 +64,58 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
 
 <!-- Mobile phone App display Card section -->
 
-<div class="columns">
-  <div class="column" id="left">
-    <div class="card" id="app-screen" >
+<div class="flex-content">
+  <div  id="left">
+    <div class="fixed-box">
+      <div class="card" id="app-screen" >
+        <figure class="image">
+              <img id="phone" src="../assets/iphone6screenshot.png" alt="Placeholder image">
+            </figure>
+      </div>
+      <div class="card" id="app-screen2" >
       <figure class="image">
-            <img id="phone" src="../assets/iphone6screenshot.png" alt="Placeholder image">
+            <img id="sml-phone" src="../assets/SignUpScreen.png" alt="Placeholder image">
           </figure>
+      </div>
     </div>
-    <div class="card" id="app-screen2" >
-    <figure class="image">
-          <img id="sml-phone" src="../assets/SignUpScreen.png" alt="Placeholder image">
-        </figure>
-    </div>
+
   </div>
-  <div class="column is-two-thirds" id="right">
+  <div id="right">
+    <img id="banner-image" src="../assets/logoTransWhite.png"/>
+    <h3 id="appdesc">The Darkskies App turns your Mobile device into a chemtrail tracker. Enabling you to help s <span style="font-weight: bold">global community of activists</span>, gather the data needed to force disclosure</h3>
+    <h4 id="title2">Coming early 2018, Sign Up to Be Part Of the Beta</h4>
+
+  <div v-if="!signUpStatus" class="box"  id="email" style="width: 600px;">
+
+      <div class="field has-addons">
+        <p class="control">
+          <input v-if="!duplicateAddress" class="input" style="width: 480px;" type="text" placeholder="Your email" v-model="emailAddress">
+          <a v-if="duplicateAddress" @click="reset()" class="button is-danger">Ooops! We already have that email, click here to try another one</a>
+        </p>
+        <p class="control">
+          <a v-if="emailAddress === '' || isValid" class="button is-success" @click="subscribe">
+            Subscribe
+          </a>
+          <a v-if="!isValid && emailAddress !== ''" class="button is-success" @click="subscribe" disabled>
+            Subscribe
+          </a>
+        </p>
+    </div>
+
+</div>
+<div v-if="signUpStatus" class="box"  id="email" style="width: 600px;">
+<p v-if="signUpStatus"> Thanks for signing up, We will email you once the app is ready.</p>
+</div>
+  <h2 id="tagline">Togther, we can put chemtrails on the map, discover how..</h2>
+
+    <span  id="downicon" class="icon o">
+    <i class="fa fa-3x fa-chevron-down"></i>
+   </span>
   </div>
 </div>
+
+
+
   </div>
 </template>
 <script>
@@ -159,14 +167,40 @@ export default {
 
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
+
+.flex-content {
+  position:relative;
+  display: flex;
+  top: -425px;
+}
+
+.headline {
+    position: relative;
+    margin-bottom: -80px;
+    top: -550px;
+    font-size: 64px;
+    color: #fff;
+    z-index: 100;
+    opacity: 0.6;
+    font-family: 'roboto' sans-serif;
+}
+
 #left {
-background-color:#ccc;
-min-width: 800px;
+flex: 1;
+height: 700px;
 }
 
 #right {
-background-color: #gray;
+flex: 1;
+text-align: left;
+color: #fff;
 }
+
+.fixed-box {
+  width: 550px;
+  max-height: 700px;
+}
+
 
 #phone {
   width: 370px;
@@ -181,12 +215,10 @@ background-color: #gray;
 }
 
 #app-screen {
+  position: relative;
+  left: 150px;
   background-color: #ffffff;
   width: 370px;
-  position: absolute;
-  left: 20%;
-  /* transform: translateX(-400px); */
-  top: 250px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
   border-radius: 10px;
   z-index: 10;
@@ -195,10 +227,8 @@ background-color: #gray;
 #app-screen2 {
   background-color: #ffffff;
   width: 300px;
-  position: absolute;
-  left:12%;
-  /* transform: translateX(-400px); */
-  top: 330px;
+  position: relaive;
+  bottom: 600px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
   border-radius: 10px;
   z-index: 9;
@@ -206,17 +236,14 @@ background-color: #gray;
 
 #opt-in {
   background-color: #ffffff;
-  width: 600px;
-  position: absolute;
-  left: 50%;
-  /* transform: translateX(-400px); */
-  top: 400px;
+  width: 80%;
   text-align: left;
 }
 
 #email {
-  top: 530px;
-  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 70px;
+  width: 50vw;
   padding: 10px;
 }
 
@@ -224,53 +251,46 @@ background-color: #gray;
   font-size: 42px;
   font-weight: bold;
   font-family: 'roboto' sans-serif;
-  position: absolute;
-  left: 45%;
-  top: 700px;
-  width: 800px;
+  width: 70%;
   line-height: 55px;
-  color: #555;
+  color: #777;
 /*  text-shadow: 4px 4px 10px rgba(0, 0, 0, .4); */
 }
 
 #banner-image {
-  position: absolute;
-  left: 44%;
-  top: 265px;
+
   width: 450px;
   z-index: 10;
+  margin-bottom: 20px;
+  margin-left: -23px;
 }
 
 #banner-text {
+  position: relative;
+  top: 80px;
   z-index: 1000;
 }
 
 #title2 {
-  position: absolute;
-  left: 45%;
-  top: 485px;
-  width: 800px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 21px;
 }
 
 #downicon {
-  position: absolute;
-  left: 58%;
-  top: 850px;
   color: #ccc;
   z-index:1000;
+  margin-top: 20px;
+  margin-left: 25%;
 }
 
 #appdesc {
-  position: absolute;
-  left: 45%;
-  top: 370px;
-  width: 600px;
+
+  width: 72%;
   font-size: 21px;
   line-height: 30px;
   opacity: 0.9;
+  margin-bottom: 30px;
 }
 
 
@@ -299,12 +319,126 @@ background-color: #gray;
 }
 
 .box {
-  width: 400px;
-  position: absolute;
-  left: 45%;
-  top: 300px;
-  padding: opx;
-
+  width: 70%;
  /* transform: translateX(-250px); */
+}
+
+
+@media (min-width: 500px) {
+  .flex-content {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1156px) {
+  .fixed-box {
+    float: right;
+  }
+
+
+}
+
+@media (max-width: 1150px) {
+  .fixed-box {
+    margin-left: 50%;
+    margin-right: 50%;
+    transform: translateX(-275px);
+  }
+
+  #banner-image {
+    position: absolute;
+    top: -150px;
+    margin-left: 5px;
+  }
+
+  .right {
+    text-align: center;
+  }
+
+  #opt-in {
+    background-color: #blue;
+    width: 80vw;
+    text-align: left;
+  }
+
+  #email {
+    margin-top: -400px;
+    width: 80vw;
+    padding: 10px;
+    background-color: #3DA4FF;
+  }
+
+  #appdesc {
+
+    width: 80vw;
+    color: #555;
+  }
+
+  #tagline {
+
+    width: 80vw;
+  /*  text-shadow: 4px 4px 10px rgba(0, 0, 0, .4); */
+  }
+
+}
+
+@media (max-width: 534px) {
+
+    .fixed-box {
+      width: 100vw;
+      border: solid 1px blue;
+      justify-content: center;
+    }
+
+    #app-screen {
+      position: relative;
+      left: 180px;
+      background-color: #ffffff;
+      width: 70vw;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
+      border-radius: 10px;
+      z-index: 10;
+    }
+
+    #app-screen2 {
+      background-color: #ffffff;
+      width: 60vw;
+      position: relaive;
+      top: -430px;
+      left: 100px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
+      border-radius: 10px;
+      z-index: 9;
+    }
+
+    .field {
+      width: 100px;
+    }
+
+    p.control {
+      width: 60vw;
+    }
+
+
+
+    .flex-content {
+      position:relative;
+      display: flex;
+      flex-wrap: wrap;
+      top: -200px;
+    }
+
+    .left {
+      justify-content: center;
+    }
+
+    .right {
+      justify-content: center;
+    }
+
+    #banner-image {
+      position: absolute;
+      top: -100px;
+    }
 }
 </style>
