@@ -82,7 +82,7 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
   </div>
   <div id="right">
     <img id="banner-image" src="../assets/logoTransWhite.png"/>
-    <h3 id="appdesc">The Darkskies App turns your Mobile device into a chemtrail tracker. Enabling you to help s <span style="font-weight: bold">global community of activists</span>, gather the data needed to force disclosure</h3>
+    <h3 id="appdesc">The Darkskies App turns your Mobile device into a chemtrail tracker. Enabling you to help a <span style="font-weight: bold">global community of activists</span>, to gather the data needed to get full disclosure</h3>
     <h4 id="title2">Coming early 2018, Sign Up to Be Part Of the Beta</h4>
 
   <div v-if="!signUpStatus" class="box"  id="email" style="width: 600px;">
@@ -106,7 +106,7 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
 <div v-if="signUpStatus" class="box"  id="email" style="width: 600px;">
 <p v-if="signUpStatus"> Thanks for signing up, We will email you once the app is ready.</p>
 </div>
-  <h2 id="tagline">Togther, we can put chemtrails on the map, discover how..</h2>
+  <h2 id="tagline">Together, we can put chemtrails on the map, discover how..</h2>
 
     <span  id="downicon" class="icon o">
     <i class="fa fa-3x fa-chevron-down"></i>
