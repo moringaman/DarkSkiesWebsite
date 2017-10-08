@@ -172,7 +172,7 @@ export default {
   position:relative;
   display: flex;
   display: -webkit-flex;
-  display: -webkit-box
+  display: -webkit-box;
   top: -425px;
 }
 
