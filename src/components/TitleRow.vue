@@ -120,7 +120,7 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
 </template>
 <script>
 var emailRE = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
+import moment from 'moment'
 export default {
   name: 'title',
   data () {
@@ -149,7 +149,10 @@ export default {
   },
   methods: {
     subscribe () {
-      this.$store.dispatch('PostSignUpData', this.emailAddress)
+      this.$store.dispatch('PostSignUpData', {
+        email: this.emailAddress,
+        signUpDate: moment().format()
+      })
       this.emailAddress = ' '
     },
     reset () {
@@ -172,7 +175,7 @@ export default {
 top: 25vh;
 }
 .flex-content {
-justify-content: space-around; 
+justify-content: space-around;
   display: flex;
   display: -webkit-flex;
 
