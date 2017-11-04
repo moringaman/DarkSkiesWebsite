@@ -63,7 +63,7 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
 </div> -->
 
 <!-- Mobile phone App display Card section -->
-
+<div id="section">
 <div class="flex-content">
   <div  id="left">
     <div class="fixed-box">
@@ -113,7 +113,7 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
    </span>
   </div>
 </div>
-
+</div>
 
 
   </div>
@@ -167,19 +167,22 @@ export default {
 
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
-
+#section {
+  position: absolute;
+top: 25vh;
+}
 .flex-content {
-  position:relative;
+justify-content: space-around; 
   display: flex;
   display: -webkit-flex;
-  top: -425px;
+
 }
 
 .headline {
     position: relative;
     margin-bottom: -80px;
     top: -550px;
-    font-size: 64px;
+    font-size: 1vw;
     color: #fff;
     z-index: 100;
     opacity: 0.6;
@@ -195,31 +198,35 @@ height: 700px;
 flex: 1;
 text-align: left;
 color: #fff;
+       padding-left: 50px;
 }
 
 .fixed-box {
-  width: 550px;
-  max-height: 700px;
+ max-width: 590px;
+height: 30vw;
+  padding-left: 10px;
+border: solid 1px blue;
+text-align: right;
 }
 
 
 #phone {
-  width: 370px;
+  width: 100%;
   border-radius: 10px;
   z-index: 10;
 }
 
 #sml-phone {
-  width: 300px;
+  width: 100%;
   border-radius: 10px;
   zindex: 9;
 }
 
 #app-screen {
   position: relative;
-  left: 150px;
   background-color: #ffffff;
-  width: 370px;
+margin-left: 230px;
+  width: 20vw;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
   border-radius: 10px;
   z-index: 10;
@@ -227,12 +234,13 @@ color: #fff;
 
 #app-screen2 {
   background-color: #ffffff;
-  width: 300px;
-  position: relaive;
-  bottom: 600px;
+  width: 17vw;
+  position: relative;
+top: -32vw;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
   border-radius: 10px;
   z-index: 9;
+left: 50px;
 }
 
 #opt-in {
@@ -249,11 +257,11 @@ color: #fff;
 }
 
 #tagline {
-  font-size: 42px;
+  font-size: 2.5vw;
   font-weight: bold;
   font-family: 'roboto' sans-serif;
   width: 70%;
-  line-height: 55px;
+  line-height: 3vw;
   color: #777;
 /*  text-shadow: 4px 4px 10px rgba(0, 0, 0, .4); */
 }
