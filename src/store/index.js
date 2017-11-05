@@ -11,7 +11,8 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     signUpStatus: false,
-    duplicateAddress: false
+    duplicateAddress: false,
+    loading: false
   },
   mutations: {
     setSignUpStatus (state, payload) {
@@ -19,15 +20,16 @@ export const store = new Vuex.Store({
     },
     setDuplicateAddress (state, payload) {
       state.duplicateAddress = payload
-      // setTimeout(() => {
-      //   state.duplicateAddress = false
-      // }, 3000)
+    },
+    setLoading (state, payload) {
+      state.loading = payload
     }
   },
   actions: {
     PostSignUpData ({ commit }, payload) {
       // var uid = MyUid()
       // console.log(payload)
+      commit('setLoadeing', true)
       firebase
         .database()
         .ref('subscribers/')
@@ -50,6 +52,7 @@ export const store = new Vuex.Store({
               signUpDate: payload.signUpDate
             })
             commit('setSignUpStatus', true)
+            commit('setLoadeing', false)
             // return true
           }
         })
@@ -64,6 +67,9 @@ export const store = new Vuex.Store({
     },
     duplicateAddress (state) {
       return state.duplicateAddress
+    },
+    loading (state) {
+      return state.loading
     }
   }
 })

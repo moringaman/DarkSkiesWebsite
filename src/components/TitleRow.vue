@@ -69,12 +69,12 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
     <div class="fixed-box">
       <div class="card" id="app-screen" >
         <figure class="image">
-              <img id="phone" src="../assets/iphone6screenshot.png" alt="Placeholder image">
+              <img id="phone" src="../assets/iphone6screenshot-fs8.png" alt="Placeholder image">
             </figure>
       </div>
       <div class="card" id="app-screen2" >
       <figure class="image">
-            <img id="sml-phone" src="../assets/SignUpScreen.png" alt="Placeholder image">
+            <img id="sml-phone" src="../assets/SignUpScreen-fs8.png" alt="Placeholder image">
           </figure>
       </div>
     </div>
@@ -95,6 +95,9 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
         <p class="control">
           <a v-if="emailAddress === '' || isValid" class="button is-success" @click="subscribe">
             Subscribe
+          </a>
+          <a v-else="loading" class="button is-success is-loading" @click="subscribe">
+            Loading
           </a>
           <a v-if="!isValid && emailAddress !== ''" class="button is-success" @click="subscribe" disabled>
             Subscribe
@@ -134,6 +137,9 @@ export default {
     },
     duplicateAddress () {
       return this.$store.getters.duplicateAddress
+    },
+    loading () {
+      return this.$store.getters.loading
     },
     validation: function () {
       return {
@@ -407,19 +413,32 @@ left: 50px;
 
 }
 
+
+@media screen and (max-width: 375px){
+
+.fixed-box {
+  width: 50vw;
+  padding-left: 0px;
+  left: -100px;
+}
+
+
+}
+
+
 @media screen and (max-width: 534px) {
 
     .fixed-box {
       width: 100vw;
-      border: solid 1px blue;
       justify-content: center;
     }
 
  #app-screen {
       position: relative;
-      left: 180px;
+      left: -170px;
+      top: 200px;
       background-color: #ffffff;
-      width: 70vw;
+      width: 65vw;
       box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
       border-radius: 10px;
       z-index: 10;
@@ -427,10 +446,10 @@ left: 50px;
 
     #app-screen2 {
       background-color: #ffffff;
-      width: 60vw;
+      width: 55vw;
       position: relaive;
-      top: -430px;
-      left: 100px;
+      top: -190px;
+      left: -10px;
       box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
       border-radius: 10px;
       z-index: 9;
@@ -466,7 +485,9 @@ left: 50px;
 
     #banner-image {
       position: absolute;
-      top: -100px;
+      width: 80vw;
+      top: 100px;
+      margin: 0 auto;
     }
 }
 </style>
