@@ -205,7 +205,7 @@ color: #fff;
 }
 
 .fixed-box {
- max-width: 590px;
+ min-width: 590px;
 height: 30vw;
   padding-left: 10px;
 border: solid 1px blue;
@@ -341,6 +341,8 @@ left: 50px;
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
   }
+
+
 }
 
 @media screen and (min-width: 1156px) {
@@ -355,13 +357,24 @@ left: 50px;
   .fixed-box {
     margin-left: 50%;
     margin-right: 50%;
+    width: 60vw;
+    height: 400px;
     transform: translateX(-275px);
+  }
+
+  #app-screen {
+    width: 50%;
+  }
+
+  #app-screen2 {
+    width: 45%;
+    top: -470px;
   }
 
   #banner-image {
     position: absolute;
     top: -150px;
-    margin-left: 5px;
+    margin-left: 50px;
   }
 
   .right {
@@ -375,7 +388,7 @@ left: 50px;
   }
 
   #email {
-    margin-top: -400px;
+    margin-top: -300px;
     width: 80vw;
     padding: 10px;
     background-color: #3DA4FF;
@@ -403,7 +416,7 @@ left: 50px;
       justify-content: center;
     }
 
-    #app-screen {
+ #app-screen {
       position: relative;
       left: 180px;
       background-color: #ffffff;
