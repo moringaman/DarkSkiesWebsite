@@ -207,8 +207,7 @@ color: #fff;
 .fixed-box {
  min-width: 590px;
 height: 30vw;
-  padding-left: 10px;
-border: solid 1px blue;
+padding-left: 10px;
 text-align: right;
 }
 
