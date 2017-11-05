@@ -69,12 +69,12 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
     <div class="fixed-box">
       <div class="card" id="app-screen" >
         <figure class="image">
-              <img id="phone" src="../assets/iphone6screenshot-fs8.png" alt="Placeholder image">
+              <img id="phone" src="../assets/iphone6screenshot.png" alt="Placeholder image">
             </figure>
       </div>
       <div class="card" id="app-screen2" >
       <figure class="image">
-            <img id="sml-phone" src="../assets/SignUpScreen-fs8.png" alt="Placeholder image">
+            <img id="sml-phone" src="../assets/SignUpScreen.png" alt="Placeholder image">
           </figure>
       </div>
     </div>
