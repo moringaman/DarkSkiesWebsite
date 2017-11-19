@@ -93,13 +93,10 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
           <a v-if="duplicateAddress" @click="reset()" class="button is-danger">Ooops! We already have that email, click here to try another one</a>
         </p>
         <p class="control">
-          <a v-if="emailAddress === '' || isValid" class="button is-success" @click="subscribe">
+          <a v-if="emailAddress === '' || isValid" class="button is-success" v-bind:class="classObject" @click="subscribe">
             Subscribe
           </a>
-          <a v-else="loading" class="button is-success is-loading" @click="subscribe">
-            Loading
-          </a>
-          <a v-if="!isValid && emailAddress !== ''" class="button is-success" @click="subscribe" disabled>
+          <a  v-if="!isValid && emailAddress !== ''" class="button is-success"  @click="subscribe" disabled>
             Subscribe
           </a>
         </p>
@@ -128,7 +125,10 @@ export default {
   name: 'title',
   data () {
     return {
-      emailAddress: ''
+      emailAddress: '',
+      classObject: {
+        'is-loading': this.loading
+      }
     }
   },
   computed: {
@@ -164,6 +164,7 @@ export default {
     reset () {
       this.emailAddress = ' '
       this.$store.commit('setDuplicateAddress', false)
+      this.$store.commit('setLoading', false)
     }
   },
   created () {
@@ -482,6 +483,17 @@ left: 50px;
     .right {
       justify-content: center;
     }
+
+      #tagline {
+        width: 80vw;
+        top: 200px;
+      /*  text-shadow: 4px 4px 10px rgba(0, 0, 0, .4); */
+      }
+
+#downicon {
+
+  bottom:-300px;
+}
 
     #banner-image {
       position: absolute;
