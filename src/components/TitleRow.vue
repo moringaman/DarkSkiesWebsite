@@ -290,7 +290,7 @@ left: 50px;
 
 #banner-text {
   position: relative;
-  top: 80px;
+  top: 85px;
   z-index: 1000;
 }
 

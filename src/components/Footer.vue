@@ -3,18 +3,21 @@
     <div class="container">
       <div class="columns">
         <div class="column is-two-thirds">
-          <ul>
+
+          <ul class="is-medium">
             <li>About</li>
             <li>Contact Us</li>
             <li>Donations</li>
             <li>Developers</li>
 
           </ul>
-
+<img id="banner-image" src="../assets/logoTransWhite.png"/>
+  <p id="copyright" class='subtitle is-6'> Copyright 2017 - darkskies.co.uk</p>
         </div>
         <div class="column">
+
       <wx-optin id="optinbox"></wx-optin>
-      <p id="copyright" class='subtitle is-5'> Copyright 2017 - darkskies.co.uk</p>
+
     </div>
     </div>
   </div>
@@ -36,14 +39,22 @@ export default {
 </script>
 <style lang="css" scoped>
 
+ul {
+  margin-top: 70px;
+}
+
 #optinbox {
   position: absolute;
-  bottom: -100px;
+  bottom: 100px;
 }
 
 #copyright {
   position: absolute;
-  bottom: -250px;
+
+}
+
+#banner-image {
+  margin-left: -33px;
 }
 
 p {
@@ -51,7 +62,6 @@ p {
 }
 
 #footer {
-  padding-top: 100px;
   text-align: left;
   /* height:632px; */
   height: 370px;
