@@ -2,7 +2,7 @@
   <div id="footer">
     <div class="container">
       <div class="columns">
-        <div class="column is-two-thirds">
+        <div class="column">
 
           <ul class="is-medium">
             <li>About</li>
@@ -15,7 +15,7 @@
   <p id="copyright" class='subtitle is-6'> Copyright 2017 - darkskies.co.uk</p>
         </div>
         <div class="column">
-
+<h4 id="title2">Coming early 2018, Sign Up to Be Part Of the Beta</h4>
       <wx-optin id="optinbox"></wx-optin>
 
     </div>
@@ -45,7 +45,7 @@ ul {
 
 #optinbox {
   position: absolute;
-  bottom: 100px;
+  bottom: -35px;
 }
 
 #copyright {
@@ -55,6 +55,15 @@ ul {
 
 #banner-image {
   margin-left: -33px;
+}
+
+#title2 {
+  position: relative;
+  bottom: -190px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 21px;
+  opacity:0.6;
 }
 
 p {
