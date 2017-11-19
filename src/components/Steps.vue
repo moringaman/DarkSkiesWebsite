@@ -12,15 +12,15 @@
   <div class="columns">
     <div class="column">
   <i class="material-icons">phone_iphone</i>
-     <p class="subtitle is-3">Photograph</p>
+     <p class="subtitle is-4">Capture Image</p>
       </div>
        <div class="column">
       <i class="material-icons">room</i>
-      <p class="subtitle is-3">Drop Marker</p>
+      <p class="subtitle is-4">Drop Marker</p>
       </div>
        <div class="column">
            <i class="material-icons">people</i>
-           <p class="subtitle is-3">Share Worldwide</p>
+           <p class="subtitle is-4">Share Worldwide</p>
       </div>
     </div>
     </div>
@@ -38,6 +38,8 @@ export default {
 
 <style lang="css" scoped>
 
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
 #steps {
   margin-top: 400px;
   height: 800px;
@@ -46,10 +48,11 @@ export default {
 i {
   font-size: 6rem;
   margin-bottom: 30px;
+  opacity: 0.5;
 }
 
 #icons {
-  margin-top:70px;
+  margin-top:100px;
   margin-bottom: 50px;
 }
 
