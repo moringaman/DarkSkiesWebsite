@@ -84,7 +84,8 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
     <img id="banner-image" src="../assets/logoTransWhite.png"/>
     <h3 id="appdesc">The Darkskies App turns your Mobile device into a chemtrail tracker. Enabling you to help a <span style="font-weight: bold">global community of activists</span>, to gather the data needed to get full disclosure</h3>
     <h4 id="title2">Coming early 2018, Sign Up to Be Part Of the Beta</h4>
-
+    <wx-optin></wx-optin>
+<!--
   <div v-if="!signUpStatus" class="box"  id="email" style="width: 600px;">
 
       <div class="field has-addons">
@@ -105,7 +106,7 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
 </div>
 <div v-if="signUpStatus" class="box"  id="email" style="width: 600px;">
 <p v-if="signUpStatus"> Thanks for signing up, We will email you once the app is ready.</p>
-</div>
+</div> -->
   <h2 id="tagline">Together, we can put chemtrails on the map, discover how..</h2>
 
     <span  id="downicon" class="icon o">
@@ -121,7 +122,11 @@ SEND ME THE FREE APP DOWNLOAD AT LAUNCH
 <script>
 var emailRE = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 import moment from 'moment'
+import Optin from './Optin'
 export default {
+  components: {
+    wxOptin: Optin
+  },
   name: 'title',
   data () {
     return {

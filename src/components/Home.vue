@@ -2,7 +2,10 @@
   <div class="Home">
 <wx-map></wx-map>
 <wx-titlerow></wx-titlerow>
+<wx-chem-pics></wx-chem-pics>
 <wx-steps></wx-steps>
+<wx-footer></wx-footer>
+
   </div>
 </template>
 
@@ -10,11 +13,15 @@
 import Map from './Map'
 import TitleRow from './TitleRow.vue'
 import Steps from './Steps.vue'
+import ChemPics from './ChemPhotos'
+import Footer from './Footer'
 export default {
   components: {
     wxMap: Map,
     wxTitlerow: TitleRow,
-    wxSteps: Steps
+    wxSteps: Steps,
+    wxChemPics: ChemPics,
+    wxFooter: Footer
   },
   data () {
     return {
